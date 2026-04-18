@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Letícia Soares | Especialista em Direito Previdenciário</title>
+    <meta name="description" content="Especialista em Aposentadorias, BPC/LOAS e auxílio-doença. Atendimento humanizado e online para todo o Brasil. Garanta seu direito previdenciário.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #0c1f3f;
+            --navy-light: #162e58;
+            --gold: #b8963e;
+            --gold-hover: #a07c30;
+            --gold-light: #f5edd8;
+            --white: #ffffff;
+            --gray: #6b7280;
+            --bg-light: #f8f9fb;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Reset & Base */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Inter', sans-serif; color: var(--navy); line-height: 1.6; overflow-x: hidden; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        ul { list-style: none; }
+        a { text-decoration: none; color: inherit; transition: var(--transition); }
+
+        /* Layout */
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 80px 0; }
+        .text-center { text-align: center; }
+
+        /* Header & Nav */
+        nav { position: fixed; top: 0; width: 100%; background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid rgba(0,0,0,0.05); padding: 15px 0; }
+        .nav-inner { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: 700; font-family: 'Cormorant Garamond', serif; }
+        .logo span { color: var(--gold); }
+        .nav-links { display: flex; gap: 30px; align-items: center; }
+        .nav-links a { font-size: 0.9rem; font-weight: 500; color: var(--gray); }
+        .nav-links a:hover { color: var(--gold); }
+        .btn-nav { background: var(--navy); color: var(--white) !important; padding: 10px 20px; border-radius: 4px; }
+
+        /* Hero Section */
+        .hero { min-height: 100vh; background: var(--navy); display: flex; align-items: center; color: var(--white); padding-top: 100px; }
+        .hero-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 40px; align-items: center; }
+        .hero-content h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; margin-bottom: 20px; }
+        .hero-content p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 30px; max-width: 600px; }
+        .hero-btns { display: flex; gap: 15px; flex-wrap: wrap; }
+        
+        .btn { display: inline-flex; align-items: center; gap: 10px; padding: 15px 30px; border-radius: 4px; font-weight: 700; cursor: pointer; border: none; }
+        .btn-gold { background: var(--gold); color: var(--white); }
+        .btn-gold:hover { background: var(--gold-hover); transform: translateY(-3px); }
+        .btn-outline { border: 1px solid rgba(255,255,255,0.3); color: var(--white); }
+        .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+        .hero-stats { margin-top: 40px; display: flex; gap: 30px; }
+        .stat-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; opacity: 0.8; }
+        .stat-item i { color: var(--gold); }
+
+        /* About Section */
+        .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+        .about-img img { width: 100%; border-radius: 8px; box-shadow: var(--shadow); }
+        .sec-label { color: var(--gold); text-transform: uppercase; letter-spacing: 2px; font-weight: 700; font-size: 0.8rem; display: block; margin-bottom: 10px; }
+        .about-text h2 { font-size: 2.5rem; margin-bottom: 20px; }
+        .about-features { display: grid; grid-template-columns: 1fr; gap: 20px; margin-top: 30px; }
+        .feat-item { display: flex; gap: 15px; align-items: flex-start; }
+        .feat-icon { color: var(--gold); font-size: 1.5rem; }
+
+        /* SEÇÃO 3: ÁREAS DE ATUAÇÃO */
+        .bg-light { background: var(--bg-light); }
+        .areas-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 50px; }
+        .area-card { background: var(--white); padding: 35px 25px; border-radius: 6px; border: 1px solid #eee; transition: var(--transition); position: relative; overflow: hidden; text-decoration: none; display: flex; flex-direction: column; height: 100%; border-top: 4px solid var(--gold); align-items: center; text-align: center; flex: 1 1 280px; max-width: 380px; }
+        .area-card:hover { transform: translateY(-10px); box-shadow: var(--shadow); }
+        .area-card i { font-size: 2.2rem; color: var(--gold); margin-bottom: 20px; transition: var(--transition); }
+        .area-card h3 { font-size: 1.3rem; margin-bottom: 12px; color: var(--navy); line-height: 1.2; }
+        .area-card p { font-size: 0.9rem; color: var(--gray); flex-grow: 1; }
+        .area-card::after { content: "→"; position: absolute; bottom: 20px; right: 25px; color: var(--gold); opacity: 0; transition: var(--transition); font-weight: bold; }
+        .area-card:hover::after { opacity: 1; right: 30px; }
+
+        /* Steps Section */
+        .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; margin-top: 50px; }
+        .step-card { position: relative; padding: 35px; background: var(--white); border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: var(--transition); }
+        .step-num { font-size: 5rem; font-weight: 700; color: var(--gold); position: absolute; top: -10px; left: -5px; z-index: -1; opacity: 0.2; transition: var(--transition); }
+        .step-card:hover { transform: translateY(-5px); }
+        .step-card:hover .step-num { opacity: 0.5; transform: scale(1.1); }
+        .step-card h4 { margin-top: 20px; margin-bottom: 10px; }
+
+        /* SEÇÃO 6: BLOG PREVIEW */
+        .blog-bg { background: var(--bg-light); }
+        .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; margin-bottom: 50px; }
+        .blog-card { background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.03); transition: var(--transition); }
+        .blog-card:hover { transform: scale(1.02); box-shadow: var(--shadow); }
+        .blog-thumb { width: 100%; height: 220px; background-size: cover; background-position: center; position: relative; }
+        .blog-tag { position: absolute; top: 20px; left: 20px; background: var(--gold); color: white; padding: 5px 15px; font-size: 0.75rem; font-weight: 700; border-radius: 20px; text-transform: uppercase; }
+        .blog-content { padding: 30px; }
+        .blog-meta { font-size: 0.8rem; color: var(--gray); margin-bottom: 10px; display: block; }
+        .blog-content h3 { font-size: 1.5rem; margin-bottom: 15px; line-height: 1.3; color: var(--navy); }
+        .blog-content p { font-size: 0.95rem; color: var(--gray); margin-bottom: 20px; }
+        .btn-link { color: var(--gold); font-weight: 700; text-decoration: none; font-size: 0.9rem; border-bottom: 2px solid transparent; transition: var(--transition); }
+        .btn-link:hover { border-bottom-color: var(--gold); }
+
+        /* SEÇÃO 7: CTA FINAL */
+        .cta-final { background: linear-gradient(rgba(12, 31, 63, 0.95), rgba(12, 31, 63, 0.95)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?auto=format&fit=crop&w=1200') center/cover; color: white; text-align: center; }
+        .cta-final h2 { font-size: 3rem; margin-bottom: 20px; color: var(--white); }
+        .cta-final p { font-size: 1.2rem; opacity: 0.9; max-width: 700px; margin: 0 auto 40px; }
+
+        /* Lead Magnet Form */
+        .capture-sec { background: var(--navy); color: var(--white); }
+        .capture-container { max-width: 800px; margin: 0 auto; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 12px; }
+        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .form-group { display: flex; flex-direction: column; gap: 5px; }        .form-group input, .form-group select { padding: 15px; border-radius: 4px; border: 2px solid rgba(255,255,255,0.3); background: rgba(255,255,255,0.1); color: #ffffff; width: 100%; font-size: 1rem; font-weight: 500; transition: var(--transition); }
+        .form-group input::placeholder { color: rgba(255,255,255,0.6); }
+        .form-group input:focus, .form-group select:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.2); box-shadow: 0 0 15px rgba(184, 150, 62, 0.3); }
+        .form-group select { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23b8963e'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 15px center; background-size: 18px; padding-right: 45px; cursor: pointer; color-scheme: dark; }
+        .form-group select option { background-color: var(--navy-light); color: #ffffff; }
+        .form-full { grid-column: span 2; }
+        .btn-submit { width: 100%; margin-top: 20px; background: var(--gold); color: white; border: none; padding: 15px; font-weight: 700; border-radius: 4px; cursor: pointer; }
+
+        /* WhatsApp Float */
+        .wa-float { position: fixed; bottom: 30px; right: 30px; background: #25d366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 30px; box-shadow: 0 10px 25px rgba(37,211,102,0.3); z-index: 1000; animation: pulse 2s infinite; transition: var(--transition); }
+        .wa-float:hover { transform: scale(1.1); }
+        @keyframes pulse { 0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37,211,102,0.7); } 70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37,211,102,0); } 100% { transform: scale(1); } }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .hero-grid, .about-grid, .form-grid { grid-template-columns: 1fr; }
+            .hero-content { text-align: center; }
+            .hero-btns, .hero-stats { justify-content: center; }
+            .nav-links:not(.mobile-active) { display: none; }
+            .section-header h2 { font-size: 2rem; }
+            .cta-final h2 { font-size: 2.2rem; }
+            .blog-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container nav-inner">
+            <a href="#" class="logo">Leticia<span>Soares</span></a>
+            <ul class="nav-links">
+                <li><a href="#sobre">Dra. Letícia</a></li>
+                <li><a href="#areas">Atuação</a></li>
+                <li><a href="#como-funciona">Como Funciona</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato" class="btn-nav">Falar com Especialista</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <span class="sec-label" style="color: var(--gold);">Especialista em Direito Previdenciário</span>
+                <h1>Seu direito previdenciário garantido com <em>expertise</em> e dedicação</h1>
+                <p>Sou a Dra. Letícia Soares. Cuido de aposentadorias, BPC/LOAS e benefícios por incapacidade. Atendimento humanizado e 100% online para todo o Brasil.</p>
+                <div class="hero-btns">
+                    <a href="https://wa.me/5581996273630" class="btn btn-gold">Falar com a Dra. Letícia</a>
+                    <a href="#areas" class="btn btn-outline">Conhecer Meus Direitos</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item"><i class="fas fa-check-circle"></i> OAB/MG 205775</div>
+                    <div class="stat-item"><i class="fas fa-globe"></i> Atendimento Nacional</div>
+                    <div class="stat-item"><i class="fas fa-user-shield"></i> Sigilo e Segurança</div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://i.ibb.co/Ps4KyqjS/Se-voc-n-o-tem-paci-ncia-para-teoria-infinita-e-quer-ver-o-site-ganhando-forma-na-hora-o-Bonieky.png" alt="Dra Letícia Soares" style="width:100%; border-radius: 12px; border: 5px solid rgba(255,255,255,0.1);">
+            </div>
+        </div>
+    </section>
+
+    <section id="sobre" class="container about-grid">
+        <div class="about-img">
+            <img src="https://i.ibb.co/tMH5mfQS/Captura-de-tela-2026-04-18-135157.png" alt="Sobre Letícia Soares">
+        </div>
+        <div class="about-text">
+            <span class="sec-label">Trajetória e Propósito</span>
+            <h2>Conheça a Dra. Letícia Soares</h2>
+            <p>Sou advogada especialista em Direito Previdenciário. Minha trajetória foi construída para ajudar pessoas a conquistarem os benefícios que a lei garante, mas que o sistema muitas vezes dificulta.</p>
+            <p>Sei que navegar pelo INSS pode ser frustrante. É exatamente para isso que existo: para ser a ponte entre você e seu direito com transparência e foco no resultado.</p>
+            
+            <div class="about-features">
+                <div class="feat-item">
+                    <i class="fas fa-bullseye feat-icon"></i>
+                    <div>
+                        <strong>Especialização Exclusiva</strong>
+                        <p>Foco total em Direito Previdenciário.</p>
+                    </div>
+                </div>
+                <div class="feat-item">
+                    <i class="fas fa-laptop-house feat-icon"></i>
+                    <div>
+                        <strong>Atendimento 100% Digital</strong>
+                        <p>Agilidade e conforto para clientes de todo o país.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="areas" class="bg-light">
+        <div class="container">
+            <div class="text-center">
+                <div class="section-header">
+                    <span class="sec-label">Como Posso Te Ajudar</span>
+                <h2>Especialidades Previdenciárias</h2>
+                    <p>Atuo em todas as frentes do Direito Previdenciário para garantir seus direitos.</p>
+                </div>
+            </div>
+            <div class="areas-grid">
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-user-clock"></i>
+                    <h3>Aposentadoria por Idade</h3>
+                    <p>Orientação completa para quem atingiu a idade mínima exigida pelo INSS.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-history"></i>
+                    <h3>Tempo de Contribuição</h3>
+                    <p>Análise técnica das regras de transição pós-Reforma da Previdência.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-wheelchair"></i>
+                    <h3>Incapacidade Permanente</h3>
+                    <p>Suporte jurídico em casos de doença ou acidente com incapacidade total.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-user-injured"></i>
+                    <h3>Incapacidade Temporária</h3>
+                    <p>Antigo auxílio-doença. Auxílio no requerimento e recursos administrativos.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-hands-helping"></i>
+                    <h3>BPC/LOAS Idoso</h3>
+                    <p>Benefício assistencial para idosos acima de 65 anos em baixa renda.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-accessibility"></i>
+                    <h3>BPC/LOAS PCD</h3>
+                    <p>Direito garantido para pessoas com deficiência e vulnerabilidade social.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-users-slash"></i>
+                    <h3>Pensão por Morte</h3>
+                    <p>Amparo aos dependentes do segurado falecido perante o INSS.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-baby"></i>
+                    <h3>Salário-Maternidade</h3>
+                    <p>Garantia de renda durante a maternidade, adoção ou guarda judicial.</p>
+                </a>
+                <a href="#contato" class="area-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Planejamento Previdenciário</h3>
+                    <p>Organize suas contribuições e simule cenários para garantir o maior valor futuro.</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="como-funciona" style="background: var(--bg-light);">
+        <div class="container">
+        <div class="text-center">
+            <span class="sec-label">Processo Transparente</span>
+            <h2>Seu benefício em 4 passos</h2>
+        </div>
+        <div class="steps-grid">
+            <div class="step-card">
+                <span class="step-num">01</span>
+                <h4>Análise Gratuita</h4>
+                <p>Contato inicial sem custos para entender seu caso.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">02</span>
+                <h4>Avaliação 24h</h4>
+                <p>Análise técnica detalhada dos seus documentos.</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">03</span>
+                <h4>Orientação</h4>
+                <p>Explicação clara da estratégia sem "juridiquês".</p>
+            </div>
+            <div class="step-card">
+                <span class="step-num">04</span>
+                <h4>Acompanhamento</h4>
+                <p>Cuidamos de tudo até o dinheiro estar na conta.</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="section-padding cta-final">
+        <div class="container">
+            <h2>Não deixe seus direitos esperando</h2>
+            <p>Cada dia sem o benefício é renda perdida. Garanta o que é seu por direito com quem entende do assunto. A análise inicial é gratuita.</p>
+            <a href="https://wa.me/5581996273630" class="btn btn-gold">
+                <i class="fab fa-whatsapp"></i> Falar com a Dra. Letícia Agora
+            </a>
+        </div>
+    </section>
+
+    <section id="blog" class="section-padding blog-bg">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sec-label">Informativo</span>
+                <h2>Conteúdo Gratuito Para Seus Direitos</h2>
+            </div>
+
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600');">
+                        <span class="blog-tag">Dicas</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-meta">18 de Abril, 2026</time>
+                        <h3>5 Erros que negam seu pedido de aposentadoria</h3>
+                        <p>Saiba como evitar falhas documentais comuns que fazem o INSS indeferir seu benefício imediatamente...</p>
+                        <a href="#" class="btn-link">Ler Artigo Completo</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600');">
+                        <span class="blog-tag">BPC/LOAS</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-meta">15 de Abril, 2026</time>
+                        <h3>BPC para Autistas: Guia prático do direito</h3>
+                        <p>Entenda os critérios de renda e a avaliação médica necessária para garantir o BPC/LOAS para autismo...</p>
+                        <a href="#" class="btn-link">Ler Artigo Completo</a>
+                    </div>
+                </article>
+
+                <article class="blog-card">
+                    <div class="blog-thumb" style="background-image: url('https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=600');">
+                        <span class="blog-tag">INSS</span>
+                    </div>
+                    <div class="blog-content">
+                        <time class="blog-meta">10 de Abril, 2026</time>
+                        <h3>Revisão da Vida Toda: O que mudou agora?</h3>
+                        <p>Confira as últimas atualizações judiciais sobre a tese que pode aumentar o benefício de milhares...</p>
+                        <a href="#" class="btn-link">Ler Artigo Completo</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center">
+                <a href="#" class="btn btn-gold">Ver Todos os Artigos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="capture-sec">
+        <div class="container capture-container text-center">
+            <span class="sec-label" style="color:var(--gold)">Presente Gratuito</span>
+            <h2>Como descobrir se você tem direito a um benefício do INSS?</h2>
+            <p>Baixe nosso guia exclusivo e tire suas dúvidas agora.</p>
+            <form id="leadForm" class="form-grid">
+                <div class="form-group">
+                    <input type="text" placeholder="Seu Nome Completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Seu Melhor E-mail" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="WhatsApp (DDD)" required>
+                </div>
+                <div class="form-group">
+                    <select required>
+                        <option value="">Principal Interesse...</option>
+                        <option>Aposentadoria</option>
+                        <option>BPC/LOAS</option>
+                        <option>Auxílio-Doença</option>
+                        <option>Pensão</option>
+                        <option>Outro</option>
+                    </select>
+                </div>
+                <div class="form-full">
+                    <button type="submit" class="btn-submit">Receber Guia Gratuito</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer style="background:#080f1c; color:rgba(255,255,255,0.6); padding: 50px 0; text-align:center;">
+        <div class="container">
+            <h3 style="color:var(--gold); font-size: 1.8rem; margin-bottom: 20px;">Leticia Soares Advogada</h3>
+            <p>Especialista em Direito Previdenciário - OAB/MG 205775</p>
+            <div style="margin: 20px 0; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+                &copy; 2026 Todos os direitos reservados. Desenvolvido por TechCoDesign.
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5581996273630" class="wa-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Smooth Scroll Avançado
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Efeito de Header no Scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Validação básica do formulário
+        document.getElementById('leadForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Guia enviado com sucesso para seu e-mail!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
