@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0c1f3f">
+  <title>Revisão da Vida Toda: O que Mudou Agora? | Dra. Letícia Soares</title>
+  <meta name="description" content="Confira as últimas atualizações judiciais sobre a tese da Revisão da Vida Toda, que pode aumentar o benefício de aposentados do INSS.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy:       #0c1f3f;
+      --navy-light: #162e58;
+      --gold:       #b8963e;
+      --gold-hover: #a07c30;
+      --white:      #ffffff;
+      --gray:       #4b5563;
+      --bg-light:   #f8f9fb;
+      --radius-sm:  4px;
+      --radius-md:  8px;
+      --radius-lg:  12px;
+      --shadow-sm:  0 2px 8px rgba(0,0,0,.08);
+      --shadow-md:  0 8px 24px rgba(0,0,0,.12);
+      --dur: .3s;
+      --ease: cubic-bezier(.4,0,.2,1);
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; color: var(--navy); line-height: 1.6; overflow-x: hidden; -webkit-font-smoothing: antialiased; }
+    h1,h2,h3,h4 { font-family: 'Cormorant Garamond', Georgia, serif; line-height: 1.15; }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; transition: color var(--dur) var(--ease), opacity var(--dur) var(--ease); }
+
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
+    .container-narrow { max-width: 780px; margin: 0 auto; padding: 0 clamp(16px, 5vw, 40px); }
+
+    /* HEADER */
+    .site-header { position: fixed; inset: 0 0 auto 0; background: rgba(255,255,255,.96); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid rgba(0,0,0,.06); padding: 12px 0; box-shadow: var(--shadow-sm); }
+    .nav-inner { display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+    .logo { font-family: 'Cormorant Garamond', Georgia, serif; font-size: clamp(1.1rem, 3vw, 1.45rem); font-weight: 700; white-space: nowrap; }
+    .logo span { color: var(--gold); }
+    .btn-header { background: var(--navy); color: var(--white); padding: 10px 18px; border-radius: var(--radius-sm); font-weight: 700; font-size: .875rem; white-space: nowrap; transition: background var(--dur) var(--ease); }
+    .btn-header:hover { background: var(--navy-light); }
+
+    /* HERO */
+    .article-hero { background: var(--navy); padding-top: clamp(100px, 16vw, 148px); padding-bottom: clamp(40px, 6vw, 64px); color: var(--white); }
+    .article-hero .breadcrumb { display: flex; gap: 8px; align-items: center; font-size: .8rem; opacity: .65; margin-bottom: 18px; flex-wrap: wrap; }
+    .article-hero .breadcrumb a:hover { opacity: 1; color: var(--gold); }
+    .article-hero .breadcrumb span { opacity: .45; }
+    .article-tag { display: inline-block; background: var(--gold); color: var(--white); padding: 4px 12px; border-radius: 20px; font-size: .72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .5px; margin-bottom: 16px; }
+    .article-hero h1 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 16px; max-width: 18ch; }
+    .article-hero .lead { font-size: clamp(.95rem, 2.2vw, 1.15rem); opacity: .85; max-width: 60ch; margin-bottom: 24px; }
+    .article-meta { display: flex; gap: 18px; flex-wrap: wrap; align-items: center; font-size: .82rem; opacity: .65; }
+    .article-meta strong { opacity: 1; color: var(--gold); }
+
+    /* BODY */
+    .article-body { padding: clamp(40px, 7vw, 72px) 0; }
+    .article-img-hero { margin-bottom: clamp(32px, 5vw, 52px); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-md); }
+    .article-img-hero img { width: 100%; aspect-ratio: 16/7; object-fit: cover; }
+
+    .article-content h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin-top: 42px; margin-bottom: 12px; color: var(--navy); }
+    .article-content h3 { font-size: clamp(1.1rem, 2.5vw, 1.35rem); margin-top: 28px; margin-bottom: 8px; color: var(--navy); }
+    .article-content p { color: var(--gray); margin-bottom: 16px; font-size: clamp(.9rem, 2vw, 1.02rem); }
+    .article-content p:first-of-type { font-size: clamp(1rem, 2.2vw, 1.1rem); color: var(--navy); }
+    .article-content strong { color: var(--navy); }
+
+    /* Timeline */
+    .timeline { position: relative; padding-left: 28px; margin: 32px 0; }
+    .timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), rgba(184,150,62,.2)); border-radius: 2px; }
+    .timeline-item { position: relative; margin-bottom: 28px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-dot { position: absolute; left: -24px; top: 5px; width: 12px; height: 12px; border-radius: 50%; background: var(--gold); border: 2px solid var(--white); box-shadow: 0 0 0 2px var(--gold); }
+    .timeline-year { font-size: .75rem; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+    .timeline-item h3 { font-size: 1.1rem; margin-bottom: 6px; margin-top: 0; }
+    .timeline-item p { font-size: .9rem; color: var(--gray); margin: 0; }
+
+    /* Verdict box */
+    .verdict-box { border-radius: var(--radius-lg); padding: clamp(22px, 4vw, 36px); margin: 32px 0; }
+    .verdict-box.negative { background: rgba(239,68,68,.06); border: 1.5px solid rgba(239,68,68,.25); }
+    .verdict-box.positive { background: rgba(34,197,94,.06); border: 1.5px solid rgba(34,197,94,.25); }
+    .verdict-box h3 { font-size: 1.2rem; margin-bottom: 10px; margin-top: 0; }
+    .verdict-box.negative h3 { color: #b91c1c; }
+    .verdict-box.positive h3 { color: #15803d; }
+    .verdict-box p { font-size: .9rem; color: var(--gray); margin: 0; }
+    .verdict-box p + p { margin-top: 8px; }
+
+    /* Alert */
+    .alert-box { background: rgba(184,150,62,.08); border: 1.5px solid rgba(184,150,62,.3); border-radius: var(--radius-md); padding: clamp(18px, 3vw, 28px); margin: 32px 0; }
+    .alert-box .alert-title { display: flex; align-items: center; gap: 9px; font-weight: 700; color: var(--navy); margin-bottom: 8px; font-size: 1rem; }
+    .alert-box p { font-size: .9rem; color: var(--gray); margin: 0; }
+    .alert-box p + p { margin-top: 8px; }
+
+    /* Quote */
+    .quote-block { border-left: 4px solid var(--gold); padding: 16px 20px; background: var(--bg-light); border-radius: 0 var(--radius-md) var(--radius-md) 0; margin: 28px 0; }
+    .quote-block p { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-style: italic; color: var(--navy); margin: 0; line-height: 1.5; }
+    .quote-block cite { display: block; margin-top: 8px; font-size: .8rem; color: var(--gray); font-style: normal; }
+
+    /* CTA */
+    .cta-inline { background: var(--navy); color: var(--white); border-radius: var(--radius-lg); padding: clamp(28px, 5vw, 44px); text-align: center; margin: 48px 0; }
+    .cta-inline h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 10px; }
+    .cta-inline p { opacity: .82; font-size: .95rem; margin-bottom: 22px; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 13px 26px; border-radius: var(--radius-sm); font-weight: 700; font-size: .95rem; cursor: pointer; border: none; transition: background var(--dur) var(--ease), transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+    .btn:active { transform: scale(.97); }
+    .btn-gold { background: var(--gold); color: var(--white); }
+    .btn-gold:hover { background: var(--gold-hover); box-shadow: 0 4px 14px rgba(184,150,62,.35); }
+
+    /* Author */
+    .author-box { display: flex; gap: 18px; align-items: flex-start; background: var(--bg-light); border-radius: var(--radius-md); padding: clamp(18px, 3vw, 28px); margin-top: 48px; }
+    .author-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--gold); }
+    .author-box h4 { font-size: 1.05rem; margin-bottom: 2px; }
+    .author-box p { font-size: .85rem; color: var(--gray); margin: 0; }
+    .author-box .oab { font-size: .78rem; color: var(--gold); font-weight: 600; margin-bottom: 4px; display: block; }
+
+    /* Related */
+    .related { background: var(--bg-light); padding: clamp(40px, 6vw, 64px) 0; }
+    .related h2 { font-size: clamp(1.4rem, 3vw, 2rem); margin-bottom: 28px; text-align: center; }
+    .related-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 580px) { .related-grid { grid-template-columns: 1fr 1fr; } }
+    .related-card { background: var(--white); border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease); }
+    .related-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+    .related-card img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+    .related-card .rc-body { padding: 18px; }
+    .related-card .rc-tag { font-size: .7rem; font-weight: 700; text-transform: uppercase; color: var(--gold); letter-spacing: .5px; margin-bottom: 6px; display: block; }
+    .related-card h3 { font-size: 1.1rem; color: var(--navy); margin-bottom: 6px; }
+    .related-card p { font-size: .85rem; color: var(--gray); }
+
+    /* Footer */
+    .site-footer { background: #080f1c; color: rgba(255,255,255,.55); padding: clamp(32px, 5vw, 50px) 0; text-align: center; }
+    .footer-brand { font-family: 'Cormorant Garamond', Georgia, serif; color: var(--gold); font-size: 1.5rem; margin-bottom: 6px; }
+    .footer-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 14px 0 0; padding-top: 12px; }
+
+    .wa-float { position: fixed; bottom: clamp(20px,4vw,28px); right: clamp(16px,4vw,28px); background: #25d366; color: #fff; width: clamp(50px,12vw,56px); height: clamp(50px,12vw,56px); border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 5px 18px rgba(37,211,102,.38); z-index: 50; animation: wa-pulse 2.8s ease-in-out infinite; transition: transform var(--dur) var(--ease); }
+    .wa-float:hover { transform: scale(1.12); }
+    @keyframes wa-pulse { 0%,100% { box-shadow: 0 5px 18px rgba(37,211,102,.38); } 50% { box-shadow: 0 5px 18px rgba(37,211,102,.38), 0 0 0 10px rgba(37,211,102,.12); } }
+
+    @media (prefers-reduced-motion: reduce) { * { animation-duration: .001ms !important; transition-duration: .001ms !important; } }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">Leticia Soares <span>Advocacia</span></a>
+      <a href="index.html#contato" class="btn-header">Falar com Especialista</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="article-hero">
+      <div class="container-narrow">
+        <nav class="breadcrumb" aria-label="Navegação estrutural">
+          <a href="index.html">Início</a>
+          <span aria-hidden="true">›</span>
+          <a href="index.html#blog">Blog</a>
+          <span aria-hidden="true">›</span>
+          <span>Revisão da Vida Toda</span>
+        </nav>
+        <span class="article-tag">INSS</span>
+        <h1>Revisão da Vida Toda: O que Mudou Agora?</h1>
+        <p class="lead">O STF encerrou definitivamente a discussão em novembro de 2025. Entenda o que foi decidido, quem ainda pode ser beneficiado e quais outras revisões permanecem válidas.</p>
+        <div class="article-meta">
+          <span>Por <strong>Dra. Letícia Soares</strong></span>
+          <span><time datetime="2026-04-10">10 de Abril, 2026</time></span>
+          <span>⏱ 8 min de leitura</span>
+        </div>
+      </div>
+    </section>
+
+    <article class="article-body">
+      <div class="container-narrow">
+
+        <div class="article-img-hero">
+          <img src="https://images.unsplash.com/photo-1434626881859-194d67b2b86f?auto=format&fit=crop&w=1200&q=70"
+               alt="Martelo de juiz sobre mesa de madeira e documentos"
+               width="1200" height="525" loading="eager" fetchpriority="high">
+        </div>
+
+        <div class="article-content">
+          <p>Por anos, a "Revisão da Vida Toda" foi uma das teses previdenciárias mais aguardadas do Brasil — e uma das mais movimentadas nos escritórios de advocacia previdenciária. A possibilidade de incluir no cálculo da aposentadoria contribuições feitas antes do Plano Real (julho de 1994) gerou expectativa em milhões de aposentados. Em novembro de 2025, o Supremo Tribunal Federal encerrou definitivamente a discussão.</p>
+
+          <p>A decisão, tomada por 8 votos a 3, representa o fim de uma longa jornada judicial iniciada há mais de duas décadas. Mas entender o que ela significa na prática — e o que ainda é possível fazer — exige conhecer toda a trajetória do tema.</p>
+
+          <h2>O que era a Revisão da Vida Toda?</h2>
+          <p>A Revisão da Vida Toda dizia respeito ao cálculo do benefício de previdenciários filiados ao INSS antes de novembro de 1999, quando entrou em vigor a Lei 9.876/1999. Essa lei introduziu a regra de transição do fator previdenciário e determinou que o benefício fosse calculado com base nas contribuições feitas a partir de julho de 1994 — início do Plano Real.</p>
+          <p>O argumento dos aposentados era que, se o cálculo com <em>todas</em> as contribuições da vida laboral — inclusive as realizadas em moedas antigas, antes do Real — fosse mais vantajoso, o segurado deveria poder optar por ele. Para muitos trabalhadores com histórico contributivo longo antes de 1994, essa revisão representaria um aumento significativo no benefício.</p>
+
+          <div class="quote-block">
+            <p>A regra de transição é de aplicação obrigatória e que o segurado não pode escolher o cálculo que considerar mais benéfico.</p>
+            <cite>— Tese fixada pelo STF no RE 1.276.977 (Tema 1.102), novembro de 2025</cite>
+          </div>
+
+          <h2>A cronologia completa da disputa</h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">1999</div>
+              <h3>Lei 9.876/1999 e a regra de transição</h3>
+              <p>A lei que instituiu o fator previdenciário estabeleceu que, para os filiados ao INSS antes de sua vigência, o benefício seria calculado com base nas contribuições a partir de julho de 1994. Nasce a controvérsia sobre quem entrou no sistema antes dessa data.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Dezembro de 2019</div>
+              <h3>STJ aprova a revisão</h3>
+              <p>O Superior Tribunal de Justiça decide, no REsp 1.726.114, que segurados filiados antes de novembro de 1999 podem optar pelo cálculo mais favorável, incluindo contribuições anteriores ao Plano Real. A tese gera enorme expectativa entre aposentados e advogados previdenciários.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Março de 2022</div>
+              <h3>STF também aprova — por maioria apertada</h3>
+              <p>O Supremo Tribunal Federal, em decisão no RE 1.276.977, reconhece por maioria que a revisão é válida. A notícia circula amplamente e mobiliza escritórios em todo o país. O INSS apresenta embargos de declaração pedindo a modulação dos efeitos.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Julho de 2023</div>
+              <h3>Processos suspensos</h3>
+              <p>O ministro Alexandre de Moraes determina a suspensão de todos os processos que tratavam do tema, após constatar que Tribunais Regionais Federais ordenavam implantação imediata da revisão antes do trânsito em julgado.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Março de 2024</div>
+              <h3>STF muda de posição — nas ADIs</h3>
+              <p>Em julgamento das ADIs 2110 e 2111, que tratavam do fator previdenciário, o STF declara a constitucionalidade da regra de transição e derruba a possibilidade de escolha pelo segurado. A corte admite que mudou de entendimento em relação a 2022.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Abril de 2024</div>
+              <h3>Modulação: marco temporal definido</h3>
+              <p>O STF publica a ata do julgamento das ADIs e modula os efeitos. Decisões favoráveis concedidas até 5 de abril de 2024 são preservadas. Quem recebeu a revisão nesse período <strong>não precisa devolver os valores</strong>.</p>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="timeline-year">Novembro de 2025</div>
+              <h3>Encerramento definitivo — 8 a 3</h3>
+              <p>Em julgamento de embargos de declaração no RE 1.276.977, o Plenário do STF reafirma o entendimento por 8 votos a 3, cancela a tese de repercussão geral favorável definida em 2022 e determina o prosseguimento imediato de todos os processos suspensos — agora para serem negados.</p>
+            </div>
+          </div>
+
+          <h2>O que a decisão significa na prática</h2>
+
+          <div class="verdict-box negative">
+            <h3>✗ O que não é mais possível</h3>
+            <p>Aposentados e pensionistas que se enquadram na regra de transição da Lei 9.876/1999 <strong>não podem mais optar pelo cálculo com todas as contribuições da vida laboral</strong>. A regra de transição é de aplicação obrigatória e não admite exceções.</p>
+            <p>Novos pedidos de revisão da vida toda serão negados em todas as instâncias. Os processos que estavam suspensos deverão agora ser julgados improcedentes pelos juízes federais e tribunais.</p>
+          </div>
+
+          <div class="verdict-box positive">
+            <h3>✓ O que ainda é garantido</h3>
+            <p>Quem obteve <strong>decisão favorável definitiva ou provisória até 5 de abril de 2024</strong> está protegido pela modulação de efeitos: não precisa devolver os valores já recebidos e está isento do pagamento de custas processuais, honorários de sucumbência e despesas com perícias.</p>
+            <p>Quem tinha ações em andamento até essa data também fica isento dessas cobranças, mesmo que a ação seja julgada improcedente agora.</p>
+          </div>
+
+          <div class="alert-box">
+            <div class="alert-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+              Atenção com promessas sobre a revisão da vida toda
+            </div>
+            <p>Com a decisão definitiva do STF, qualquer oferta de serviço jurídico prometendo revisão da vida toda para novos casos deve ser tratada com extrema cautela. As entidades representativas da advocacia previdenciária recomendam que segurados consultem apenas advogados regularmente inscritos na OAB e evitem pagamentos antecipados por serviços relacionados a essa tese.</p>
+          </div>
+
+          <h2>Outras revisões que ainda são válidas</h2>
+          <p>O encerramento da Revisão da Vida Toda não significa que aposentados não tenham mais direito a questionar seus benefícios. Existem outras teses e situações que podem resultar em aumento do valor da aposentadoria ou pensão — e que permanecem plenamente aplicáveis.</p>
+
+          <h3>Revisão por erro de cálculo do INSS</h3>
+          <p>O INSS pode ter cometido erros ao calcular o benefício: deixado de considerar vínculos empregatícios, computado salários incorretamente ou ignorado períodos de atividade especial. Esses erros podem ser corrigidos administrativamente ou na Justiça, com pagamento retroativo.</p>
+
+          <h3>Reconhecimento de tempo especial</h3>
+          <p>Quem trabalhou exposto a agentes nocivos (ruído, calor, substâncias químicas, atividades de risco) pode ter direito ao reconhecimento de tempo especial, que é convertido com fator de acréscimo para cálculo da aposentadoria. É uma das revisões com maior potencial de impacto financeiro.</p>
+
+          <h3>Reconhecimento de períodos não registrados</h3>
+          <p>Vínculos empregatícios não constantes no CNIS — trabalho informal, contribuições não recolhidas pelo empregador, períodos rurais — podem ser reconhecidos mediante prova documental e/ou testemunhal, tanto na via administrativa quanto judicial.</p>
+
+          <h3>Revisão da pensão por morte</h3>
+          <p>Pensionistas que tiveram o benefício calculado com base em regras anteriores podem ter direito à revisão do valor, especialmente nos casos em que o falecido tinha tempo especial não reconhecido ou vínculos não computados.</p>
+
+          <h2>O que fazer agora</h2>
+          <p>Se você recebia a revisão da vida toda e está preocupado com os próximos passos, o caminho é verificar se sua decisão se enquadra nos critérios de modulação — ou seja, se foi concedida até 5 de abril de 2024. Se sim, os valores já recebidos estão protegidos.</p>
+          <p>Se você tinha uma ação em andamento que pode ser afetada, é fundamental consultar um advogado previdenciário para entender o impacto específico no seu caso e avaliar se há outras teses aplicáveis à sua situação.</p>
+          <p>E se você nunca revisou seu benefício, pode ser o momento certo para fazer isso — não pela revisão da vida toda, que não existe mais, mas pelas outras possibilidades que podem estar sendo negligenciadas.</p>
+
+          <div class="cta-inline">
+            <h2>Seu benefício pode estar sendo pago a menor</h2>
+            <p>Há outros erros e revisões que o INSS não informa espontaneamente. Faço uma análise gratuita do seu histórico previdenciário para identificar se você tem direito a mais.</p>
+            <a href="index.html#contato" class="btn btn-gold">Solicitar Análise Gratuita</a>
+          </div>
+
+          <div class="author-box">
+            <img src="https://ik.imagekit.io/zndtfytzo/WhatsApp%20Image%202026-04-22%20at%2014.38.07.jpeg"
+                 alt="Dra. Letícia Soares" class="author-avatar" width="70" height="70" loading="lazy">
+            <div>
+              <h4>Dra. Letícia Soares</h4>
+              <span class="oab">OAB/MG 205775</span>
+              <p>Advogada especialista em Direito Previdenciário. Atua em aposentadorias, BPC/LOAS e benefícios por incapacidade. Atendimento 100% online para todo o Brasil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <section class="related" aria-labelledby="related-heading">
+      <div class="container">
+        <h2 id="related-heading">Você também pode se interessar</h2>
+        <div class="related-grid">
+          <a href="blog-erros-aposentadoria.html" class="related-card">
+            <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=600&q=65" alt="Documentos jurídicos" width="600" height="338" loading="lazy">
+            <div class="rc-body">
+              <span class="rc-tag">Dicas</span>
+              <h3>5 Erros que negam seu pedido de aposentadoria</h3>
+              <p>Saiba como evitar falhas documentais que fazem o INSS indeferir seu benefício.</p>
+            </div>
+          </a>
+          <a href="blog-bpc-autistas.html" class="related-card">
+            <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?auto=format&fit=crop&w=600&q=65" alt="Formulário de benefício" width="600" height="338" loading="lazy">
+            <div class="rc-body">
+              <span class="rc-tag">BPC/LOAS</span>
+              <h3>BPC para Autistas: Guia prático do direito</h3>
+              <p>Critérios de renda, avaliação médica e como garantir o BPC/LOAS para pessoas com TEA.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p class="footer-brand">Leticia Soares Advogada</p>
+      <p>Especialista em Direito Previdenciário — OAB/MG 205775</p>
+      <hr class="footer-divider">
+      <p>&copy; <time datetime="2026">2026</time> Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/553196382320" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="Abrir conversa no WhatsApp com a Dra. Letícia">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.24 5.24 0 0 0-.57-.01c-.198 0-.52.074-.792.372C7.04 10.05 6.272 10.769 6.272 12.232c0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.558 4.118 1.532 5.845L.057 23.569a.75.75 0 0 0 .92.92l5.723-1.475A11.943 11.943 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.75a9.713 9.713 0 0 1-4.967-1.363l-.356-.213-3.695.951.97-3.594-.232-.369A9.718 9.718 0 0 1 2.25 12C2.25 6.615 6.615 2.25 12 2.25S21.75 6.615 21.75 12 17.385 21.75 12 21.75z"/>
+    </svg>
+  </a>
+
+</body>
+</html>
